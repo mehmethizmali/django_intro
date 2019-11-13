@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="post">
+    <h3>{{ postKey.title }}</h3>
+    <p>{{ postKey.text | linebreaksbr }}</p>
+    {% if postKey.publish_date %}<!-- publish date boş değilse -->
+    <div class="date">
+        {{postKey.publish_date}}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

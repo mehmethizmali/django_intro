@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+        {% for post in postsKey %}
+          <div class="post">
+            <h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
+              <p><b>İçerik Id : </b>{{post.pk}}</p>
+            <p><b>İçerik :</b> {{post.text}}</p>
+              <div class="date">
+                    <p><b>Yayınlama Tarihi:</b>{{post.publish_date}}</p>
+
+              </div>
+           </div>
+        {% endfor %}
+{% endblock %}
