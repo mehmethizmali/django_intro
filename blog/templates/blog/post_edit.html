@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        <h3 style="font-family:Lobster"> Yeni Post </h3>
+    <form method="POST" class="post-form">{% csrf_token %}<!--Formlarımızın güvenliğini sağladığı için bu çok önemlidir! -->
+        {{ formKey.as_p }} <!--formu buraya yüklüyoruz-->
+        <button type="submit" class="save btn btn-default">Kaydet</button>
+    </form>
+    </div>
+{% endblock %}

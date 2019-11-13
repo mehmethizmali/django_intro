@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 <html>
     <head>
         <title>Etku</title>
@@ -10,6 +10,9 @@
     <body>
 
         <div class="page-header">
+            {% if user.is_authenticated %} <!--Admin olarak giriş yapanlar ekleme yapabilecek-->
+             <a href="{% url 'post_new' %}" class="top-menu"><spa class="glyphicon glyphicon-plus"></spa></a>
+            {% endif %}
             <h1><a href="/">Etku</a></h1>
         </div>
         <div class="content-container">
